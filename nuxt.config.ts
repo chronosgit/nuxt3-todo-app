@@ -71,11 +71,6 @@ export default defineNuxtConfig({
 				language: 'ru-RU',
 				file: 'ru.json',
 			},
-			{
-				code: 'kz',
-				language: 'kk-KZ',
-				file: 'kz.json',
-			},
 		],
 
 		detectBrowserLanguage: {
