@@ -1,4 +1,7 @@
 <script setup>
+	import MyHeader from '~/components/layout/my-header/index.vue';
+	import MyFooter from '~/components/layout/my-footer/index.vue';
+
 	const route = useRoute();
 	const { t, te } = useI18n();
 
@@ -10,7 +13,9 @@
 
 	// Localization-based title
 	const title = computed(() =>
-		te(route.meta.title) ? t(route.meta.title) : 'Default page title'
+		te(route.meta.i18nTitleKey)
+			? t(route.meta.i18nTitleKey)
+			: 'yet another todo app',
 	);
 </script>
 
@@ -38,8 +43,12 @@
 				</template>
 			</Head>
 
-			<Body>
+			<Body class="min-h-screen overflow-x-hidden">
+				<MyHeader />
+
 				<slot />
+
+				<MyFooter />
 			</Body>
 		</Html>
 	</div>
